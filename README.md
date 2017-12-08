@@ -1,4 +1,4 @@
-# gdax.email
+# gdax.discord
 GDAX discord notifications
 
 This app fetches your gdax account every 30 seconds. 
@@ -14,8 +14,6 @@ The newest fills are sent via discord.
 ```
 npm install express --save
 npm install gdax --save
-npm install nodemailer --save
-npm install play-sound --save
 npm install properties-reader --save
 ```
 
