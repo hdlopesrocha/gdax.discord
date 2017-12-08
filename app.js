@@ -1,6 +1,5 @@
 // npm install express --save
 // npm install gdax --save
-// npm install --save discord.js
 // npm install properties-reader --save
 
 const fs = require('fs');
