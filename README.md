@@ -6,7 +6,9 @@ The newest fills are sent via discord.
 
 * Create a GDAX API key.
 
-* Add your credentials to **application.properties** 
+* Create a WebHook on discord.
+
+* Add your credentials/webhook to **application.properties** 
 
 * Install dependencies:
 ```
