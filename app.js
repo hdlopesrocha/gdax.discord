@@ -74,6 +74,7 @@ function collector(){
 					var prev = getOrder(database,oid);
 				
 					if(prev == null) {
+						hasNew = true;
 						var message=fill.side +' '+ fill.product_id+' at price='+fill.price +', size='+fill.size +'\n';
 						sendMessage(message);
 					}
