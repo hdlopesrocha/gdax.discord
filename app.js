@@ -66,36 +66,20 @@ function collector(){
 				}
 				
 				var fills = [];
-				var hasNew = false;
 
+				var hasNew = false;
 				for(var i in orders){
 					var oid = orders[i].trade_id;
 					var curr = getOrder(orders,oid);						
 					var prev = getOrder(database,oid);
 				
 					if(prev == null) {
-						hasNew = true;
-					}
-					curr.isNew = prev == null;
-				
-					var d = new Date(curr.created_at);
-					var c = new Date();
-									
-					if(c.getTime() - d.getTime() < 1000*60*60*24) {
-
-						fills.push(curr);
+						var message=fill.side +' '+ fill.product_id+' at price='+fill.price +', size='+fill.size +'\n';
+						sendMessage(message);
 					}
 				}
 
 				if(hasNew){
-					var message = '';
-					for(var i in fills){
-						var fill = fills[i];
-						if(fill.isNew){
-							message += fill.side +' '+ fill.product_id+' at price='+fill.price +', size='+fill.size +'\n';
-						}
-					}
-					sendMessage(message);
 					saveDB(orders);
 				}
 			}else{
