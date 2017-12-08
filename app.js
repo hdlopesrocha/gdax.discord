@@ -1,9 +1,7 @@
-// npm install express --save
 // npm install gdax --save
 // npm install properties-reader --save
 
 const fs = require('fs');
-const express = require('express');
 const Gdax = require('gdax');
 var PropertiesReader = require('properties-reader');
 var propsDir = process.argv.length == 2? 'application.properties' :  process.argv[2];
